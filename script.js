@@ -42,14 +42,14 @@
    songUL.innerHTML="";
    for (const song of songs)
    {
-      songUL.innerHTML=songUL.innerHTML+`<li><img src="music.svg" alt="">
+      songUL.innerHTML=songUL.innerHTML+`<li><img src="image/music.svg" alt="">
                          <div class="info">
                              <div>${song.replaceAll("%20"," ")}</div>
                              <div>Harry</div>
                          </div>
                          <div class="playNow">
                              <span>Play Now</span>
-                             <img  src="play.svg" alt="">
+                             <img  src="image/play.svg" alt="">
                          </div>
       </li>`;
    }
@@ -67,7 +67,7 @@ return songs;
       if(!pause)
       {
          currentsong.play();
-         play.src="pause.svg";
+         play.src="image/pause.svg";
       }
       document.querySelector(".song-info").innerHTML=decodeURI(track);
       document.querySelector(".song-time").innerHTML="00:00/00:00";
@@ -129,12 +129,12 @@ return songs;
    if(currentsong.paused)
    {
       currentsong.play();
-      play.src="pause.svg";
+      play.src="image/pause.svg";
    }
    else 
    {
       currentsong.pause();
-      play.src="play.svg";
+      play.src="image/play.svg";
  }     
    
 })
@@ -192,14 +192,14 @@ document.querySelector(".range").getElementsByTagName("input")[0].addEventListen
 //Add an event listener to mute the track
 document.querySelector(".volume img").addEventListener("click",e=>{
      console.log(e.target);
-     if(e.target.src.includes("volume.svg"))
+     if(e.target.src.includes("image/volume.svg"))
      {
-      e.target.src=e.target.src.replace("volume.svg","mute.svg");
+      e.target.src=e.target.src.replace("image/volume.svg","image/mute.svg");
       currentsong.volume=0;
       document.querySelector(".range").getElementsByTagName("input")[0].value=0;
      }
      else{
-      e.target.src=e.target.src.replace("mute.svg","volume.svg");
+      e.target.src=e.target.src.replace("image/mute.svg","image/volume.svg");
       currentsong.volume=.1;
      }
 })
